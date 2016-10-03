@@ -81,6 +81,8 @@ class pw_new_user_approve_admin_approve {
 				<tr class="thead">
 					<th><?php _e( 'Username', 'new-user-approve' ); ?></th>
 					<th><?php _e( 'Name', 'new-user-approve' ); ?></th>
+					<th>Personalnummer</th>
+					<th>Standort</th>
 					<th><?php _e( 'E-mail', 'new-user-approve' ); ?></th>
 					<?php if ( 'pending' == $status ) { ?>
 						<th colspan="2" style="text-align: center"><?php _e( 'Actions', 'new-user-approve' ); ?></th>
@@ -125,6 +127,8 @@ class pw_new_user_approve_admin_approve {
 					<tr <?php echo $class; ?>>
 					<td><?php echo $avatar . ' ' . $edit; ?></td>
 					<td><?php echo get_user_meta( $user->ID, 'first_name', true ) . ' ' . get_user_meta( $user->ID, 'last_name', true ); ?></td>
+					<td><?php echo get_user_meta( $user->ID, 'personalnummer', true ); ?></td>
+					<td><?php echo get_user_meta( $user->ID, 'standort', true ); ?></td>
 					<td><a href="mailto:<?php echo $user->user_email; ?>"
 						   title="<?php _e( 'email:', 'new-user-approve' ) ?> <?php echo $user->user_email; ?>"><?php echo $user->user_email; ?></a>
 					</td>
